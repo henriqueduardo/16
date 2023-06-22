@@ -1,4 +1,5 @@
 // DOM - Document Object Model - é uma interface que representa documentos HTML e XML através de objetos, tornando possível manipular a estrutura, estilo e conteúdo destes documentos
+// * Propriedades e Métodos *
 const href = window.location.href;
 console.log(href);
 if (href === "http://127.0.0.1:5500/JavaScript/02-dom-b%C3%A1sico/index.html") {
@@ -36,8 +37,8 @@ console.log(urlDOM);
 const primeiroElemento = document.querySelector(".ativo");
 
 // Retorne a linguagem do navegador
-console.log(navigator.language)
+console.log(navigator.language);
 
 // Retorne a largura da janela 
-console.log(window.innerWidth)
+console.log(window.innerWidth);
 
