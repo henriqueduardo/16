@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercícios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      font-size: 18px;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    body {
+      background: #111;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    main {
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    main label {
+      font-weight: 100;
+      color: #959595;
+    }
+    input[type="checkbox"] {
+      position: relative;
+      border: 2px solid #959595;
+      border-radius: 2px;
+      background: none;
+      cursor: pointer;
+      line-height: 0;
+      margin: 0 0.6em 0 0;
+      outline: 0;
+      padding: 0 !important;
+      vertical-align: text-top;
+      height: 20px;
+      width: 20px;
+      -webkit-appearance: none;
+      opacity: 0.5;
+    }
+
+    input[type="checkbox"]:hover {
+      opacity: 1;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: purple;
+      opacity: 1;
+    }
+
+    input[type="checkbox"]:before {
+      content: "";
+      position: absolute;
+      right: 50%;
+      top: 50%;
+      width: 4px;
+      height: 10px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      margin: -1px -1px 0 -1px;
+      transform: rotate(45deg) translate(-50%, -50%);
+      z-index: 2;
+    }
+  </style>
+  <body>
+    <main class="">
+      <div>
+        <label for="exercicioUm"
+          >Exercícios 1 - Arrays (filter, map, forEach)</label
+        >
+        <input type="checkbox" checked name="exercicioUm" />
+      </div>
+      <div>
+        <label for="exercicioDois">Exercícios 2 - </label>
+        <input type="checkbox" name="exercicioDois" />
+      </div>
+    </main>
+    <script src="metodos-arrays.js"></script>
+  </body>
+</html>
