@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercícios</title>
+    <title>Exercícios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,11 +30,11 @@
     }
     main label {
       font-weight: 100;
-      color: #959595;
+      color: #fff;
     }
     input[type="checkbox"] {
       position: relative;
-      border: 2px solid #959595;
+      border: 2px solid #fff;
       border-radius: 2px;
       background: none;
       cursor: pointer;
@@ -54,7 +54,6 @@
     }
 
     input[type="checkbox"]:checked {
-      background-color: purple;
       opacity: 1;
     }
 
@@ -71,20 +70,55 @@
       transform: rotate(45deg) translate(-50%, -50%);
       z-index: 2;
     }
+    div {
+      font-size: 14px;
+      color: #959595;
+      margin-top: 4px;
+      margin-left: 12px;
+    }
   </style>
   <body>
-    <main class="">
+    <main>
       <div>
-        <label for="exercicioUm"
-          >Exercícios 1 - Arrays (filter, map, forEach)</label
+        <label for=""
+          >Exercícios 1 - Arrays - métodos (filter, map, forEach)</label
         >
-        <input type="checkbox" checked name="exercicioUm" />
+        <input type="checkbox" id="checkbox1" onclick="displayDateTime(this)" />
       </div>
       <div>
-        <label for="exercicioDois">Exercícios 2 - </label>
-        <input type="checkbox" name="exercicioDois" />
+        <label>Exercícios 2 - </label>
+        <input type="checkbox" id="checkbox2" onclick="displayDateTime(this)" />
+      </div>
+      <div>
+        <label>Exercícios 3 - </label>
+        <input type="checkbox" id="checkbox3" onclick="displayDateTime(this)" />
       </div>
     </main>
+    <script>
+      // Adiciona um evento de clique para cada input
+      document
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach(function (input) {
+          input.addEventListener("click", function () {
+            // Cria a div que será adicionada abaixo do input
+            var div = document.createElement("div");
+            // Adiciona o horário atual à div
+            div.innerHTML = "Feito em: " + new Date().toLocaleString();
+            // Adiciona a div abaixo do input
+            input.parentNode.appendChild(div);
+            // Salva as informações no localStorage
+            localStorage.setItem(input.id, div.innerHTML);
+          });
+          // Verifica se há informações salvas no localStorage para o input
+          if (localStorage.getItem(input.id)) {
+            // Cria a div com as informações salvas
+            var div = document.createElement("div");
+            div.innerHTML = localStorage.getItem(input.id);
+            // Adiciona a div abaixo do input
+            input.parentNode.appendChild(div);
+          }
+        });
+    </script>
     <script src="metodos-arrays.js"></script>
   </body>
 </html>
